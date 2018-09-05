@@ -1,0 +1,35 @@
+{
+    "name": "loveorigami/php-highcharts",
+    "type": "library",
+    "description": "A php wrapper for highcharts and highstock javascript libraries",
+    "keywords": ["highcharts", "highstock", "php", "charts", "javascript"],
+    "homepage": "https://github.com/loveorigami/php-highcharts",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Goncalo Queiros",
+            "email": "mail@goncaloqueiros.net",
+            "homepage": "http://goncaloqueiros.net",
+            "role": "Developer"
+        },
+		{
+            "name": "Andrey Lukyanov",
+            "email": "loveorigami@mail.ru",
+            "homepage": "https://github.com/loveorigami/php-highcharts",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "loveorigami@mail.ru",
+        "issues": "https://github.com/loveorigami/php-highcharts/issues",
+        "source": "https://github.com/loveorigami/php-highcharts"
+    },
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "lo\\highcharts\\": "src/"
+        }
+    }
+}
