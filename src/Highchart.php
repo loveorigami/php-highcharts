@@ -4,6 +4,7 @@ namespace lo\highcharts;
 
 use ArrayAccess;
 use lo\highcharts\chart\Chart;
+use lo\highcharts\chart\Legend;
 use lo\highcharts\chart\Series;
 use lo\highcharts\chart\SubTitle;
 use lo\highcharts\chart\Title;
@@ -15,6 +16,7 @@ use lo\highcharts\chart\ZAxis;
  * Represents a HighChart, configured by setting arrays
  *
  * @property Chart    $chart
+ * @property Legend   $legend
  * @property Title    $title
  * @property SubTitle $subtitle
  * @property Series[] $series

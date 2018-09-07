@@ -87,16 +87,21 @@ abstract class BaseAxis extends BaseObject
     public $tickPositioner = 'undefined';
     public $tickPositions = 'undefined';
     public $tickWidth = 1;
+    /** @var AxisTitle */
     public $title;
     public $type = 'linear';
     public $uniqueNames = true;
     public $units = 'undefined';
     public $visible = true;
 
+    /**
+     * @return array
+     */
     public function classMap(): array
     {
         return [
             'crosshair' => CrossHair::class,
+            'title' => AxisTitle::class,
         ];
     }
 }

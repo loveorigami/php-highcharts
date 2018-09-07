@@ -2,6 +2,7 @@
 
 namespace lo\highcharts;
 
+use lo\highcharts\chart\Legend;
 use lo\highcharts\chart\SubTitle;
 use lo\highcharts\chart\Title;
 use lo\highcharts\chart\XAxis;
@@ -39,6 +40,7 @@ class HighchartOption extends BaseObject implements \ArrayAccess
     public function classMap(): array
     {
         return [
+            'legend' => Legend::class,
             'title' => Title::class,
             'subtitle' => SubTitle::class,
             'xAxis' => XAxis::class,
@@ -121,14 +123,17 @@ class HighchartOption extends BaseObject implements \ArrayAccess
                 $arr_key = ResolverHelper::key($key);
                 $result[$arr_key] = $value->getValue($key);
 
-                if ($this->_object &&
-                    !$this->_object->$key instanceof HighchartInterface) {
-                    $result[$arr_key] = $this->_object->getValue($key);
+                if ($this->_object && !$this->_object->$key instanceof HighchartInterface) {
+                    $val = $this->_object->getValue($key);
+                    if($val){
+                        $result[$arr_key] = $val;
+                    }
                 }
             }
         }
 
-        return array_merge($data, $result);
+            return array_merge($data, $result);
+
     }
 
     public function __isset($offset): bool
